@@ -71,7 +71,7 @@ class Quiz:
                 randomIndice = random.randint(0, 8)
                 indicesAleatorios.append(randomIndice)
 
-            for x in range(0, 4):
+            for x in range(0, 5):
                 perguntaCriada = PerguntaFactory.criarPergunta(dificuldade.ALEATORIO, perguntas[indicesAleatorios[x]])
                 perguntaCriada.exibirPergunta()
 
