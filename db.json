@@ -1,0 +1,94 @@
+{
+    "perguntas": [
+        { 
+          "codigo": 1, 
+          "descricao": "A mistura entre vermelho e verde resulta em qual cor? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "descricao": "Azul", "resposta_correta": false },
+            { "descricao": "Amarelo", "resposta_correta": true }, 
+            { "descricao": "Verde", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 2, 
+          "descricao": "Quantos estados tem o Brasil? ",
+          "dificuldade": "MEDIA",
+          "alternativas": [
+            { "descricao": "25", "resposta_correta": false },
+            { "descricao": "26", "resposta_correta": true }, 
+            { "descricao": "27", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 3, 
+          "descricao": "Qual a capital do Parana? ",
+          "dificuldade": "DIFICIL",
+          "alternativas": [
+            { "descricao": "Foz do Iguacu", "resposta_correta": false },
+            { "descricao": "Cascavel", "resposta_correta": false }, 
+            { "descricao": "Curitiba", "resposta_correta": true }
+          ] 
+        },
+        { 
+          "codigo": 4, 
+          "descricao": "Todo numero elevado a expoente zero eh igual a? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "descricao": "0", "resposta_correta": false },
+            { "descricao": "1", "resposta_correta": true }, 
+            { "descricao": "2", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 5, 
+          "descricao": "Qual e o menor pais do mundo? ",
+          "dificuldade": "MEDIA",
+          "alternativas": [
+            { "descricao": "Singapura", "resposta_correta": false },
+            { "descricao": "Mônaco", "resposta_correta": false }, 
+            { "descricao": "Vaticano", "resposta_correta": true }
+          ] 
+        },
+        { 
+          "codigo": 6, 
+          "descricao": "No ano de ---- foi decretada a abolicao da escravatura no Brasil.? ",
+          "dificuldade": "DIFICIL",
+          "alternativas": [
+            { "descricao": "1888", "resposta_correta": true },
+            { "descricao": "1889", "resposta_correta": false }, 
+            { "descricao": "1891", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 7, 
+          "descricao": "Qual dos alimentos a seguir nao possui carboidratos? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "descricao": "Soja", "resposta_correta": false },
+            { "descricao": "Carne", "resposta_correta": true }, 
+            { "descricao": "Milho", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 8, 
+          "descricao": "Quantos planetas compoem o sistema solar? ",
+          "dificuldade": "MEDIA",
+          "alternativas": [
+            { "descricao": "7", "resposta_correta": false },
+            { "descricao": "8", "resposta_correta": true }, 
+            { "descricao": "9", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 9, 
+          "descricao": "Qual eh a representacao quimica do dioxido de carbono? ",
+          "dificuldade": "DIFICIL",
+          "alternativas": [
+            { "descricao": "C02", "resposta_correta": true },
+            { "descricao": "02", "resposta_correta": false }, 
+            { "descricao": "DC02", "resposta_correta": false }
+          ] 
+        }
+    ]
+}
