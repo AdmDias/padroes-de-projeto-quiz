@@ -29,6 +29,15 @@ class Alternativa:
     def exibirAlternativa(self):
         print(f'Opcao: {self.descricao}')
 
+class PerguntaFacil(Pergunta):
+    pass
+
+class PerguntaMedia(Pergunta):
+    pass
+
+class PerguntaDificil(Pergunta):
+    pass
+
 class PerguntaAleatoria(Pergunta):
     def exibirPergunta(self):    
         print(f'{self.descricao}')
@@ -37,7 +46,13 @@ class PerguntaAleatoria(Pergunta):
 class PerguntaFactory:
     @staticmethod
     def criarPergunta(dificuldade: Dificuldade, pergunta):
-        if dificuldade == dificuldade.ALEATORIO:
+        if dificuldade == dificuldade.FACIL:
+            return PerguntaFacil(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+        elif dificuldade == dificuldade.MEDIA:
+            return PerguntaMedia(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+        elif dificuldade == dificuldade.DIFICIL:
+            return PerguntaDificil(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+        elif dificuldade == dificuldade.ALEATORIO:
             return PerguntaAleatoria(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
 
 
