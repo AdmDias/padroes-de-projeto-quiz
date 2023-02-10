@@ -29,61 +29,70 @@ class Alternativa:
     def exibirAlternativa(self):
         print(f'Opcao: {self.descricao}')
 
-class PerguntaFacil(Pergunta):
-    pass
-
-class PerguntaMedia(Pergunta):
-    pass
-
-class PerguntaDificil(Pergunta):
-    pass
-
-class PerguntaAleatoria(Pergunta):
-    def exibirPergunta(self):    
-        print(f'{self.descricao}')
-
 
 class PerguntaFactory:
     @staticmethod
     def criarPergunta(dificuldade: Dificuldade, pergunta):
         if dificuldade == dificuldade.FACIL:
-            return PerguntaFacil(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+            return Pergunta(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
         elif dificuldade == dificuldade.MEDIA:
-            return PerguntaMedia(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+            return Pergunta(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
         elif dificuldade == dificuldade.DIFICIL:
-            return PerguntaDificil(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+            return Pergunta(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
         elif dificuldade == dificuldade.ALEATORIO:
-            return PerguntaAleatoria(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
+            return Pergunta(pergunta['codigo'], pergunta['descricao'], pergunta['alternativas'])
 
+class StrategyQuiz:
+    def definirQuiz(self, dificuldade: Dificuldade, questoes):
+        if dificuldade == dificuldade.FACIL:
+            self.definirQuizFacil()
+        elif dificuldade == dificuldade.MEDIA:
+            self.definirQuizMedio()
+        elif dificuldade == dificuldade.DIFICIL:
+            self.definirQuizDificil()
+        elif dificuldade == dificuldade.ALEATORIO:
+            self.definirQuizAleatorio()
+            
+            
+    def definirQuizFacil(self):
+        pass
+    
+    def definirQuizMedio(self):
+        pass
+    
+    def definirQuizDificil(self):
+        pass
+    
+    def definirQuizAleatorio(self):
+        print('\n')
+        print("="*40)
+        print('Quiz aleatorio selecionado!')
+        print('\n')
+
+        indicesAleatorios = []
+
+        for indice in range(5):
+            randomIndice = random.randint(0, 8)
+            indicesAleatorios.append(randomIndice)
+
+        # for x in range(0, 5):
+        #     perguntaCriada = PerguntaFactory.criarPergunta(  , perguntas[indicesAleatorios[x]])
+        #     perguntaCriada.exibirPergunta()
+
+        #     respostaCorreta = ''
+        #     for alternativa in perguntaCriada.alternativas:
+        #         novaAlternativa = Alternativa(alternativa['descricao'], alternativa['resposta_correta'])
+        #         if(novaAlternativa.resposta_correta): respostaCorreta = novaAlternativa.descricao
+        #         novaAlternativa.exibirAlternativa()
+            
+        #     cmd_resposta = input('Informe sua resposta: ')
+        #     perguntaCriada.validarResposta(cmd_resposta, respostaCorreta)
+        
 
 class Quiz:
     @staticmethod
     def gerarQuiz(dificuldade: Dificuldade, perguntas):
-        if (dificuldade.ALEATORIO):
-            print('\n')
-            print("="*40)
-            print('Quiz aleatorio selecionado!')
-            print('\n')
-
-            indicesAleatorios = []
-
-            for indice in range(5):
-                randomIndice = random.randint(0, 8)
-                indicesAleatorios.append(randomIndice)
-
-            for x in range(0, 5):
-                perguntaCriada = PerguntaFactory.criarPergunta(dificuldade.ALEATORIO, perguntas[indicesAleatorios[x]])
-                perguntaCriada.exibirPergunta()
-
-                respostaCorreta = ''
-                for alternativa in perguntaCriada.alternativas:
-                    novaAlternativa = Alternativa(alternativa['descricao'], alternativa['resposta_correta'])
-                    if(novaAlternativa.resposta_correta): respostaCorreta = novaAlternativa.descricao
-                    novaAlternativa.exibirAlternativa()
-                
-                cmd_resposta = input('Informe sua resposta: ')
-                perguntaCriada.validarResposta(cmd_resposta, respostaCorreta)
-            
+        quiz = StrategyQuiz.definirQuiz(dificuldade, perguntas)      
 
 if __name__ == '__main__':
     import json
