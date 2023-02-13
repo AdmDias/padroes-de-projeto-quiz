@@ -1,3 +1,4 @@
+import json
 import random
 
 #Enum de Dificuldade
@@ -7,6 +8,7 @@ class Dificuldade(Enum):
     MEDIA = 2
     DIFICIL = 3
     ALEATORIO = 4
+
 
 class Pergunta:
     def __init__(self, codigo, dificuldade, descricao, alternativas) -> None:
@@ -27,6 +29,7 @@ class Pergunta:
             print(f'Que pena, você errou :( ')
             
         print('\n')
+    
     
 class Alternativa: 
     def __init__(self, descricao, resposta_correta) -> None:
@@ -150,8 +153,26 @@ class Quiz:
         quiz = StrategyQuiz(dificuldade, perguntas)
         quiz.definirQuiz()      
 
+class SingletonPerguntasJSON:
+    __instancia = None
+    
+    def __init__(self) -> None:
+        if (SingletonPerguntasJSON.__instancia is not None):
+            raise Exception("Já instanciado.")
+        else:
+            SingletonPerguntasJSON.__instancia = self
+            
+    @staticmethod
+    def pegarInstancia():
+        if (SingletonPerguntasJSON.__instancia is None):
+            SingletonPerguntasJSON()
+        return SingletonPerguntasJSON.__instancia
+    
+    def carregarPerguntasDoJSON(self, caminhoDoArquivo):
+        dadosJSON = json.loads(open(caminhoDoArquivo))
+        return dadosJSON
+    
 if __name__ == '__main__':
-    import json
 
     jsonData = json.load(open('db.json'))
 
