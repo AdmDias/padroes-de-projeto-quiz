@@ -29,6 +29,7 @@ class Pergunta:
             return 'true'
         else:
             print(f'QUE PENA, VOCE ERROU :( ')
+            print(f'A alternativa correta era: ({respostaCorreta})')
             print('\n')
             return 'false'
 
