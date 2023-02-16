@@ -11,9 +11,9 @@ class Dificuldade(Enum):
 
 
 class Pergunta:
-    def __init__(self, pergunta) -> None:
+    def __init__(self, pergunta, dificuldade) -> None:
         self.codigo = pergunta['codigo']
-        self.dificuldade = pergunta['dificuldade']
+        self.dificuldade = dificuldade
         self.descricao = pergunta['descricao']
         self.alternativas = pergunta['alternativas']
     
@@ -51,13 +51,13 @@ class PerguntaFactory:
     @staticmethod
     def criarPergunta(dificuldade: Dificuldade, pergunta):
         if dificuldade == Dificuldade.FACIL:
-            return Pergunta(pergunta)
+            return Pergunta(pergunta, Dificuldade.FACIL)
         elif dificuldade == Dificuldade.MEDIA:
-            return Pergunta(pergunta)
+            return Pergunta(pergunta, Dificuldade.MEDIA)
         elif dificuldade == Dificuldade.DIFICIL:
-            return Pergunta(pergunta)
+            return Pergunta(pergunta, Dificuldade.DIFICIL)
         elif dificuldade == Dificuldade.ALEATORIO:
-            return Pergunta(pergunta)
+            return Pergunta(pergunta, Dificuldade.ALEATORIO)
 
 
 #Strategy para decidir qual o tipo de quiz será gerado baseado na dificuldade.
@@ -70,16 +70,16 @@ class StrategyQuiz:
         
     def definirQuiz(self):
         if self.dificuldade == Dificuldade.FACIL:
-            self.__definirQuizFacil()
+            self.definirQuizFacil()
         elif self.dificuldade == Dificuldade.MEDIA:
-            self.__definirQuizMedio()
+            self.definirQuizMedio()
         elif self.dificuldade == Dificuldade.DIFICIL:
-            self.__definirQuizDificil()
+            self.definirQuizDificil()
         elif self.dificuldade == Dificuldade.ALEATORIO:
-            self.__definirQuizAleatorio()
+            self.definirQuizAleatorio()
             
     #Strategy facil                    
-    def __definirQuizFacil(self):
+    def definirQuizFacil(self):
         print("="*50)
         print(" "*10 + " QUIZ FACIL selecionado! " + " "*10)
         print("="*50)
@@ -91,12 +91,12 @@ class StrategyQuiz:
                 questoesFaceis.append(pergunta)
                 
         for questaoFacil in questoesFaceis:
-            self.__exibirPerguntaAoUsuario(Dificuldade.FACIL, questaoFacil)
+            self.exibirPerguntaAoUsuario(Dificuldade.FACIL, questaoFacil)
         
         self.exibirResultadosDoQuiz()         
         
     #Strategy medio
-    def __definirQuizMedio(self):
+    def definirQuizMedio(self):
         print("="*50)
         print(" "*10 + " QUIZ MEDIO selecionado! " + " "*10)
         print("="*50)
@@ -108,12 +108,12 @@ class StrategyQuiz:
                 questoesMedias.append(pergunta)
                 
         for questaoMedia in questoesMedias:
-            self.__exibirPerguntaAoUsuario(Dificuldade.MEDIA, questaoMedia)
+            self.exibirPerguntaAoUsuario(Dificuldade.MEDIA, questaoMedia)
         
         self.exibirResultadosDoQuiz()
     
     #Strategy dificil
-    def __definirQuizDificil(self):
+    def definirQuizDificil(self):
         print("="*50)
         print(" "*10 + " QUIZ DIFICIL selecionado! " + " "*10)
         print("="*50)
@@ -125,31 +125,28 @@ class StrategyQuiz:
                 questoesDificies.append(pergunta)
                 
         for questaoDificil in questoesDificies:
-            self.__exibirPerguntaAoUsuario(Dificuldade.DIFICIL, questaoDificil)
+            self.exibirPerguntaAoUsuario(Dificuldade.DIFICIL, questaoDificil)
         
         self.exibirResultadosDoQuiz()
-    
+
+
     #Strategy aleatorio
-    def __definirQuizAleatorio(self):
+    def definirQuizAleatorio(self):
         print("="*50)
         print(" "*10 + " QUIZ ALEATORIO selecionado! " + " "*10)
         print("="*50)
         
+        #Aqui, eu tenho todas as perguntas do json, eu aplico um 'shuffle' para reestruturar as posiçoes das perguntas
+        #Para tentar deixar mais aleatório possivel
         random.shuffle(self.perguntas)
 
-        indicesAleatorios = []
-
-        for i in range(5):
-            randomIndice = random.randint(0, 16) # de (0 a 8), é porque meu json possui ao todo, nove perguntas.
-            indicesAleatorios.append(randomIndice)
-
         for x in range(0, 5):
-            self.__exibirPerguntaAoUsuario(Dificuldade.ALEATORIO, self.perguntas[indicesAleatorios[x]])
+            self.exibirPerguntaAoUsuario(Dificuldade.ALEATORIO, self.perguntas[x])
         
         self.exibirResultadosDoQuiz()
         
     # Criei este método apenas para evitar código repitido nos métodos acima, já que basicamente, todos irão seguir o mesmo fluxo.
-    def __exibirPerguntaAoUsuario(self, dificuldade: Dificuldade, questao):
+    def exibirPerguntaAoUsuario(self, dificuldade: Dificuldade, questao):
         perguntaCriada = PerguntaFactory.criarPergunta(dificuldade, questao)
         perguntaCriada.exibirPergunta()
         
@@ -187,24 +184,22 @@ class Quiz:
         quiz = StrategyQuiz(dificuldade, perguntas)
         quiz.definirQuiz()      
 
-#Singleton para fazer a leitura do arquivo json e extrair as perguntas
+#Singleton para garantir que a leitura do arquivo seja feita uma única vez, mesmo que o arquivo
+#sofra alteração durante a execução, a "variavel" que tem armazenado os dados do arquivo não vai ter seu estado alterado.
 class SingletonPerguntasJSON:
     __instancia = None
     
     def __init__(self, caminhoDoArquivo):
         self.caminhoDoArquivo = caminhoDoArquivo
-
-    def __new__(cls, *args, **kwargs):
-        if cls.__instancia is None:
-            cls.__instancia = super().__new__(cls)
-        
-        return cls.__instancia
+        self.dadosJSON = None
+        self.perguntasJSON = []
     
     def carregarPerguntasDoJSON(self):
-        dadosJSON = json.load(open(self.caminhoDoArquivo))
-        perguntasJSON = dadosJSON['perguntas']
+        if self.dadosJSON is None:
+            self.dadosJSON = json.load(open(self.caminhoDoArquivo))
+            self.perguntasJSON = self.dadosJSON['perguntas']
         
-        return perguntasJSON
+        return self.perguntasJSON
     
 if __name__ == '__main__':
 

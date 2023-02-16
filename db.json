@@ -56,8 +56,8 @@
             { "alternativa": "A", "descricao": "Singapura", "resposta_correta": false },
             { "alternativa": "B", "descricao": "Monaco", "resposta_correta": false }, 
             { "alternativa": "C", "descricao": "Vaticano", "resposta_correta": true },
-            { "alternativa": "D", "descricao": "Nauru", "resposta_correta": true },
-            { "alternativa": "E", "descricao": "Tuvalu", "resposta_correta": true }
+            { "alternativa": "D", "descricao": "Nauru", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Tuvalu", "resposta_correta": false }
           ] 
         },
         { 
