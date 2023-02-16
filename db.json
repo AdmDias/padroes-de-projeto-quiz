@@ -5,9 +5,11 @@
           "descricao": "A mistura entre vermelho e verde resulta em qual cor? ",
           "dificuldade": "FACIL",
           "alternativas": [
-            { "descricao": "Azul", "resposta_correta": false },
-            { "descricao": "Amarelo", "resposta_correta": true }, 
-            { "descricao": "Verde", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "Azul", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Amarelo", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "Verde", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "Preto", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Cinza", "resposta_correta": false }
           ] 
         },
         { 
@@ -15,9 +17,11 @@
           "descricao": "Quantos estados tem o Brasil? ",
           "dificuldade": "MEDIA",
           "alternativas": [
-            { "descricao": "25", "resposta_correta": false },
-            { "descricao": "26", "resposta_correta": true }, 
-            { "descricao": "27", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "25", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "26", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "27", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "29", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "28", "resposta_correta": false }
           ] 
         },
         { 
@@ -25,9 +29,11 @@
           "descricao": "Qual a capital do Parana? ",
           "dificuldade": "DIFICIL",
           "alternativas": [
-            { "descricao": "Foz do Iguacu", "resposta_correta": false },
-            { "descricao": "Cascavel", "resposta_correta": false }, 
-            { "descricao": "Curitiba", "resposta_correta": true }
+            { "alternativa": "A", "descricao": "Foz do Iguacu", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Cascavel", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Curitiba", "resposta_correta": true },
+            { "alternativa": "D", "descricao": "Cascavel", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Pato Branco", "resposta_correta": false }
           ] 
         },
         { 
@@ -35,9 +41,11 @@
           "descricao": "Todo numero elevado a expoente zero eh igual a? ",
           "dificuldade": "FACIL",
           "alternativas": [
-            { "descricao": "0", "resposta_correta": false },
-            { "descricao": "1", "resposta_correta": true }, 
-            { "descricao": "2", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "0", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "1", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "2", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "3", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "-1", "resposta_correta": false }
           ] 
         },
         { 
@@ -45,9 +53,11 @@
           "descricao": "Qual e o menor pais do mundo? ",
           "dificuldade": "MEDIA",
           "alternativas": [
-            { "descricao": "Singapura", "resposta_correta": false },
-            { "descricao": "Monaco", "resposta_correta": false }, 
-            { "descricao": "Vaticano", "resposta_correta": true }
+            { "alternativa": "A", "descricao": "Singapura", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Monaco", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Vaticano", "resposta_correta": true },
+            { "alternativa": "D", "descricao": "Nauru", "resposta_correta": true },
+            { "alternativa": "E", "descricao": "Tuvalu", "resposta_correta": true }
           ] 
         },
         { 
@@ -55,9 +65,11 @@
           "descricao": "No ano de ---- foi decretada a abolicao da escravatura no Brasil? ",
           "dificuldade": "DIFICIL",
           "alternativas": [
-            { "descricao": "1888", "resposta_correta": true },
-            { "descricao": "1889", "resposta_correta": false }, 
-            { "descricao": "1891", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "1888", "resposta_correta": true },
+            { "alternativa": "B", "descricao": "1889", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "1890", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "1891", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "1892", "resposta_correta": false }
           ] 
         },
         { 
@@ -65,9 +77,11 @@
           "descricao": "Qual dos alimentos a seguir nao possui carboidratos? ",
           "dificuldade": "FACIL",
           "alternativas": [
-            { "descricao": "Soja", "resposta_correta": false },
-            { "descricao": "Carne", "resposta_correta": true }, 
-            { "descricao": "Milho", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "Soja", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Carne", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "Milho", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "Arroz", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Feijao", "resposta_correta": false }
           ] 
         },
         { 
@@ -75,9 +89,11 @@
           "descricao": "Quantos planetas compoem o sistema solar? ",
           "dificuldade": "MEDIA",
           "alternativas": [
-            { "descricao": "7", "resposta_correta": false },
-            { "descricao": "8", "resposta_correta": true }, 
-            { "descricao": "9", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "7", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "8", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "9", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "6", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "10", "resposta_correta": false }
           ] 
         },
         { 
@@ -85,9 +101,95 @@
           "descricao": "Qual eh a representacao quimica do dioxido de carbono? ",
           "dificuldade": "DIFICIL",
           "alternativas": [
-            { "descricao": "C02", "resposta_correta": true },
-            { "descricao": "02", "resposta_correta": false }, 
-            { "descricao": "DC02", "resposta_correta": false }
+            { "alternativa": "A", "descricao": "C02", "resposta_correta": true },
+            { "alternativa": "B", "descricao": "02", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "C0", "resposta_correta": false },
+            { "alternativa": "D", "descricao": "C03", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "C04", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 10, 
+          "descricao": "Qual o nome do presidente do Brasil que ficou conhecido como Jango? ",
+          "dificuldade": "DIFICIL",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "Janio Quadros", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Getulio Vargas", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Joao Goulart", "resposta_correta": true },
+            { "alternativa": "D", "descricao": "Joao Figueiredo", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Jacinto Anjos", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 11, 
+          "descricao": "Qual o livro mais vendido no mundo a seguir a Biblia? ",
+          "dificuldade": "DIFICIL",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "O Senhor dos Aneis", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Dom Quixote", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "O Pequeno Principe", "resposta_correta": false }, 
+            { "alternativa": "D", "descricao": "Ela, a Feiticeira", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Um Conto de Duas Cidades", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 12, 
+          "descricao": "Quantas casas decimais tem o numero pi? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "Duas", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Centenas", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Infinitas", "resposta_correta": true }, 
+            { "alternativa": "D", "descricao": "Vinte", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Milhares", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 13, 
+          "descricao": "O que a palavra legend significa em portugues? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "Legenda", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Conto", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Historia", "resposta_correta": false }, 
+            { "alternativa": "D", "descricao": "Lenda", "resposta_correta": true },
+            { "alternativa": "E", "descricao": "Legendario", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 14, 
+          "descricao": "Quantos jogadores possui um time de futebol em campo? ",
+          "dificuldade": "FACIL",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "8", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "9", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "10", "resposta_correta": false }, 
+            { "alternativa": "D", "descricao": "11", "resposta_correta": true },
+            { "alternativa": "E", "descricao": "7", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 15, 
+          "descricao": "Quais as duas datas que sao comemoradas em novembro? ",
+          "dificuldade": "MEDIA",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "Independencia do Brasil e Dia da Bandeira", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Proclamacao da Republica e Dia Nacional da Consciencia Negra", "resposta_correta": true }, 
+            { "alternativa": "C", "descricao": "Dia do Medico e Dia de Sao Lucas", "resposta_correta": false }, 
+            { "alternativa": "D", "descricao": "Dia de Finados e Dia Nacional do Livro", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Black Friday e Dia da Arvore", "resposta_correta": false }
+          ] 
+        },
+        { 
+          "codigo": 16, 
+          "descricao": "Qual a nacionalidade de Che Guevara? ",
+          "dificuldade": "MEDIA",
+          "alternativas": [
+            { "alternativa": "A", "descricao": "Cubana", "resposta_correta": false },
+            { "alternativa": "B", "descricao": "Peruana", "resposta_correta": false }, 
+            { "alternativa": "C", "descricao": "Panamenha", "resposta_correta": false }, 
+            { "alternativa": "D", "descricao": "Boliviana", "resposta_correta": false },
+            { "alternativa": "E", "descricao": "Argentina", "resposta_correta": true }
           ] 
         }
     ]
