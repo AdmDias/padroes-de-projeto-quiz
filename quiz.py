@@ -190,28 +190,26 @@ class Quiz:
 class SingletonPerguntasJSON:
     __instancia = None
     
-    def __init__(self) -> None:
-        if (SingletonPerguntasJSON.__instancia is not None):
-            raise Exception("Já instanciado.")
-        else:
-            SingletonPerguntasJSON.__instancia = self
-            
-    @staticmethod
-    def pegarInstancia():
-        if (SingletonPerguntasJSON.__instancia is None):
-            SingletonPerguntasJSON()
-        return SingletonPerguntasJSON.__instancia
+    def __init__(self, caminhoDoArquivo):
+        self.caminhoDoArquivo = caminhoDoArquivo
+
+    def __new__(cls, *args, **kwargs):
+        if cls.__instancia is None:
+            cls.__instancia = super().__new__(cls)
+        
+        return cls.__instancia
     
-    def carregarPerguntasDoJSON(self, caminhoDoArquivo):
-        dadosJSON = json.load(open(caminhoDoArquivo))
+    def carregarPerguntasDoJSON(self):
+        dadosJSON = json.load(open(self.caminhoDoArquivo))
         perguntasJSON = dadosJSON['perguntas']
         
         return perguntasJSON
     
 if __name__ == '__main__':
-    
-    singletonPerguntasJSON = SingletonPerguntasJSON.pegarInstancia()
-    perguntas = singletonPerguntasJSON.carregarPerguntasDoJSON('db.json')
+
+    singletonPerguntasJSON = SingletonPerguntasJSON('db.json')
+
+    perguntas = singletonPerguntasJSON.carregarPerguntasDoJSON()
 
     print('\n')
     print("="*40)
